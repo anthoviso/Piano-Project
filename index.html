@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang='fr'>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="VISOCCHI Anthony"/>
+    <meta name="keywords" content="play, piano"/>
+    <meta name="description" content="Play piano."/>
+
+    <link rel="stylesheet" href="css/normalize.css" type="text/css" media="all"/>
+    <link rel="stylesheet" href="css/base.css" type="text/css" media="all"/>
+    <link rel="stylesheet" href="css/responsive.css" type="text/css" media="all"/>
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+
+    <title>Play piano</title>
+</head>
+
+<body>
+<header>
+    <!-- header -->
+</header>
+<!-- Main menu -->
+<div class="PianoConteneur">
+  <div id="TouchesConteneur" class="TouchesConteneur">
+<div id="TouchesBlanches" class="">
+
+</div>
+<div id="TouchesNoires" class="">
+
+</div>
+<audio id="DO" src="audio/piano-a.wav" ></audio>
+<audio id="RE" src="audio/piano-b.wav" ></audio>
+<audio id="MI" src="audio/piano-c.wav" ></audio>
+<audio id="FA" src="audio/piano-d.wav" ></audio>
+<audio id="SOL" src="audio/piano-e.wav" ></audio>
+<audio id="LA" src="audio/piano-f.wav" ></audio>
+<audio id="SI" src="audio/piano-g.wav" ></audio>
+
+  </div>
+  <div class="">
+
+  </div>
+  <div class="">
+
+  </div>
+</div>
+<footer>
+    <!-- Footer -->
+
+</footer>
+<script>
+var clavier = document.getElementById('TouchesConteneur');
+var container = document.getElementById("TouchesNoires");
+var container2 = document.getElementById("TouchesBlanches");
+var container2Txt = 'azertyuiopqsdfghjklmwxcvbn';
+
+var audio0 = document.getElementById("DO");
+var audio1 = document.getElementById("RE");
+var audio2 = document.getElementById("MI");
+var audio3 = document.getElementById("FA");
+var audio4 = document.getElementById("SOL");
+var audio5 = document.getElementById("LA");
+var audio6 = document.getElementById("SI");
+
+
+var y = 0;
+
+for (var i = 0; i < 5; i++) {
+  container.innerHTML += "<a class='TouchesNoiresConteneur'></a>";
+}
+for (var i = 0; i < 7; i++) {
+  var res = container2Txt.charAt(y);
+  container2.innerHTML += "<a onclick='play"+ y +"()' id='TouchesBlanchesConteneur' class='TouchesBlanchesConteneur'><span>"+ res +"</span></a>";
+  y = y + 1;
+}
+
+function play0(){
+   if (audio0.paused) {audio0.play();}else{audio0.currentTime = 0;}
+}
+function play1(){
+   if (audio1.paused) {audio1.play();}else{audio1.currentTime = 0;}
+}
+function play2(){
+   if (audio2.paused) {audio2.play();}else{audio2.currentTime = 0;}
+}
+function play3(){
+   if (audio3.paused) {audio3.play();}else{audio3.currentTime = 0;}
+}
+function play4(){
+   if (audio4.paused) {audio4.play();}else{audio4.currentTime = 0;}
+}
+function play5(){
+   if (audio5.paused) {audio5.play();}else{audio5.currentTime = 0;}
+}
+function play6(){
+   if (audio6.paused) {audio6.play();}else{audio6.currentTime = 0;}
+}
+
+  var down = {};
+
+  $(document).keydown(function(event){
+       var keycode = (event.keyCode ? event.keyCode : event.which);
+       if(keycode == '65'){// a
+            if (down['65'] == null) { // first press
+                play0();down['65'] = true; // record that the key's down
+            }
+       }
+       if(keycode == '90'){// z
+            if (down['90'] == null) { // first press
+                play1();down['90'] = true; // record that the key's down
+            }
+       }
+       if(keycode == '69'){// e
+            if (down['69'] == null) { // first press
+                play2();down['69'] = true; // record that the key's down
+            }
+       }
+       if(keycode == '82'){// r
+            if (down['82'] == null) { // first press
+                play3();down['82'] = true; // record that the key's down
+            }
+       }
+       if(keycode == '84'){// t
+            if (down['84'] == null) { // first press
+                play4();down['84'] = true; // record that the key's down
+            }
+       }
+       if(keycode == '89'){// y
+            if (down['89'] == null) { // first press
+                play5();down['89'] = true; // record that the key's down
+            }
+       }
+       if(keycode == '85'){// u
+            if (down['85'] == null) { // first press
+                play6();down['85'] = true; // record that the key's down
+            }
+       }
+
+     });
+
+  $(document).keyup(function(event) {
+       var keycode = (event.keyCode ? event.keyCode : event.which);
+       down[keycode] = null;
+
+  });
+</script>
+</body>
+</html>
