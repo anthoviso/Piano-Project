@@ -18,5 +18,4 @@
 * css3
 * javascript / jquery
 </content>
-  <tabTrigger>readme</tabTrigger>
 </snippet>
