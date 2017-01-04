@@ -26,12 +26,23 @@ body {
 header{
 }
 
+.title{
+	margin: 30px auto;
+	width: 300px;
+	text-align: center;
+	font-weight: bold;
+}
+
 .PianoConteneur{
-  width: 1000px;
-  margin: 5px auto;
+ width: 290px;
+margin: 30px auto;
   padding: 5px;
   background: silver;
-  height: 400px;
+}
+
+.TouchesNoires00{
+  margin-left: 30px;
+  position: absolute;
 }
 
 .TouchesNoires0{
@@ -39,9 +50,13 @@ header{
   position: absolute;
 }
 
-.TouchesNoires1{
-	margin-left: 310px;
+.TouchesNoires1, .TouchesNoires2, .TouchesNoires3, .TouchesNoires4{
+	margin-left: 30px;
   position: absolute;
+}
+
+.TouchesConteneur{
+margin-bottom: 10px;
 }
 
 .TouchesNoiresConteneur{
@@ -80,4 +95,10 @@ header{
 }
 .TouchesBlanchesConteneur:active {
     background:grey;
+}
+.TouchesNoiresConteneur:hover {
+    background: grey;
+}
+.TouchesNoiresConteneur:active {
+    background: silver;
 }
