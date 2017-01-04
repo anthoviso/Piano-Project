@@ -31,11 +31,16 @@
 </div>
 <audio id="DO" src="audio/piano-a.wav" ></audio>
 <audio id="RE" src="audio/piano-b.wav" ></audio>
+<audio id="REX" src="audio/piano-bb.wav" ></audio>
 <audio id="MI" src="audio/piano-c.wav" ></audio>
+<audio id="MIX" src="audio/piano-cb.wav" ></audio>
 <audio id="FA" src="audio/piano-d.wav" ></audio>
 <audio id="SOL" src="audio/piano-e.wav" ></audio>
+<audio id="SOLX" src="audio/piano-eb.wav" ></audio>
 <audio id="LA" src="audio/piano-f.wav" ></audio>
+<audio id="LAX" src="audio/piano-fb.wav" ></audio>
 <audio id="SI" src="audio/piano-g.wav" ></audio>
+<audio id="SIX" src="audio/piano-gb.wav" ></audio>
 
   </div>
   <div class="">
@@ -53,22 +58,31 @@
 var clavier = document.getElementById('TouchesConteneur');
 var container = document.getElementById("TouchesNoires");
 var container2 = document.getElementById("TouchesBlanches");
-var container2Txt = 'azertyuiopqsdfghjklmwxcvbn';
+var containerTxt = 'zetyu';
+var container2Txt = 'qsdfghj';
 
 var audio0 = document.getElementById("DO");
 var audio1 = document.getElementById("RE");
+var audio1x = document.getElementById("REX");
 var audio2 = document.getElementById("MI");
+var audio2x = document.getElementById("MIX");
 var audio3 = document.getElementById("FA");
 var audio4 = document.getElementById("SOL");
+var audio4x = document.getElementById("SOLX");
 var audio5 = document.getElementById("LA");
+var audio5x = document.getElementById("LAX");
 var audio6 = document.getElementById("SI");
+var audio6x = document.getElementById("SIX");
 
 
 var y = 0;
 
 for (var i = 0; i < 5; i++) {
-  container.innerHTML += "<a class='TouchesNoiresConteneur'></a>";
+	var res = containerTxt.charAt(y);
+container.innerHTML += "<a onclick='play"+ y +"x()' id='TouchesNoiresConteneur' class='TouchesNoiresConteneur'><span style='color: white;'>"+ res +"</span></a>";
+  y = y + 1;
 }
+y=0;
 for (var i = 0; i < 7; i++) {
   var res = container2Txt.charAt(y);
   container2.innerHTML += "<a onclick='play"+ y +"()' id='TouchesBlanchesConteneur' class='TouchesBlanchesConteneur'><span>"+ res +"</span></a>";
@@ -81,8 +95,14 @@ function play0(){
 function play1(){
    if (audio1.paused) {audio1.play();}else{audio1.currentTime = 0;}
 }
+function play0x(){
+   if (audio1x.paused) {audio1x.play();}else{audio1x.currentTime = 0;}
+}
 function play2(){
    if (audio2.paused) {audio2.play();}else{audio2.currentTime = 0;}
+}
+function play1x(){
+   if (audio2x.paused) {audio2x.play();}else{audio2x.currentTime = 0;}
 }
 function play3(){
    if (audio3.paused) {audio3.play();}else{audio3.currentTime = 0;}
@@ -90,50 +110,84 @@ function play3(){
 function play4(){
    if (audio4.paused) {audio4.play();}else{audio4.currentTime = 0;}
 }
+function play2x(){
+   if (audio4x.paused) {audio4x.play();}else{audio4x.currentTime = 0;}
+}
 function play5(){
    if (audio5.paused) {audio5.play();}else{audio5.currentTime = 0;}
 }
+function play3x(){
+   if (audio5x.paused) {audio5x.play();}else{audio5x.currentTime = 0;}
+}
 function play6(){
    if (audio6.paused) {audio6.play();}else{audio6.currentTime = 0;}
+}
+function play4x(){
+   if (audio6x.paused) {audio6x.play();}else{audio6x.currentTime = 0;}
 }
 
   var down = {};
 
   $(document).keydown(function(event){
        var keycode = (event.keyCode ? event.keyCode : event.which);
-       if(keycode == '65'){// a
-            if (down['65'] == null) { // first press
-                play0();down['65'] = true; // record that the key's down
-            }
-       }
        if(keycode == '90'){// z
             if (down['90'] == null) { // first press
-                play1();down['90'] = true; // record that the key's down
+                play0x();down['90'] = true; // record that the key's down
             }
        }
        if(keycode == '69'){// e
             if (down['69'] == null) { // first press
-                play2();down['69'] = true; // record that the key's down
-            }
-       }
-       if(keycode == '82'){// r
-            if (down['82'] == null) { // first press
-                play3();down['82'] = true; // record that the key's down
+                play1x();down['69'] = true; // record that the key's down
             }
        }
        if(keycode == '84'){// t
             if (down['84'] == null) { // first press
-                play4();down['84'] = true; // record that the key's down
+                play2x();down['84'] = true; // record that the key's down
             }
        }
        if(keycode == '89'){// y
             if (down['89'] == null) { // first press
-                play5();down['89'] = true; // record that the key's down
+                play3x();down['89'] = true; // record that the key's down
             }
        }
        if(keycode == '85'){// u
             if (down['85'] == null) { // first press
-                play6();down['85'] = true; // record that the key's down
+                play4x();down['85'] = true; // record that the key's down
+            }
+       }
+	          if(keycode == '81'){// q
+            if (down['81'] == null) { // first press
+                play0();down['81'] = true; // record that the key's down
+            }
+       }
+       if(keycode == '83'){// s
+            if (down['83'] == null) { // first press
+                play1();down['83'] = true; // record that the key's down
+            }
+       }
+       if(keycode == '68'){// d
+            if (down['68'] == null) { // first press
+                play2();down['68'] = true; // record that the key's down
+            }
+       }
+       if(keycode == '70'){// f
+            if (down['70'] == null) { // first press
+                play3();down['70'] = true; // record that the key's down
+            }
+       }
+       if(keycode == '71'){// g
+            if (down['71'] == null) { // first press
+                play4();down['71'] = true; // record that the key's down
+            }
+       }
+       if(keycode == '72'){// h
+            if (down['72'] == null) { // first press
+                play5();down['72'] = true; // record that the key's down
+            }
+       }
+       if(keycode == '74'){// j
+            if (down['74'] == null) { // first press
+                play6();down['74'] = true; // record that the key's down
             }
        }
 
