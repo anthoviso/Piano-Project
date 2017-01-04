@@ -22,27 +22,106 @@
 </header>
 <!-- Main menu -->
 <div class="PianoConteneur">
-  <div id="TouchesConteneur" class="TouchesConteneur">
-<div id="TouchesBlanches" class="">
-
-</div>
-<div id="TouchesNoires" class="">
-
-</div>
-<audio id="DO" src="audio/piano-a.wav" ></audio>
-<audio id="RE" src="audio/piano-b.wav" ></audio>
-<audio id="REX" src="audio/piano-bb.wav" ></audio>
-<audio id="MI" src="audio/piano-c.wav" ></audio>
-<audio id="MIX" src="audio/piano-cb.wav" ></audio>
-<audio id="FA" src="audio/piano-d.wav" ></audio>
-<audio id="SOL" src="audio/piano-e.wav" ></audio>
-<audio id="SOLX" src="audio/piano-eb.wav" ></audio>
-<audio id="LA" src="audio/piano-f.wav" ></audio>
-<audio id="LAX" src="audio/piano-fb.wav" ></audio>
-<audio id="SI" src="audio/piano-g.wav" ></audio>
-<audio id="SIX" src="audio/piano-gb.wav" ></audio>
-
+  <div id="TouchesConteneur0" class="TouchesConteneur">
+	<div id="TouchesBlanches0" class="TouchesBlanches">
+	</div>
+	<div id="TouchesNoires0" class="TouchesNoires0">
+	</div>
   </div>
+   <div id="TouchesConteneur1" class="TouchesConteneur">
+	<div id="TouchesBlanches1" class="TouchesBlanches">
+	</div>
+	<div id="TouchesNoires1" class="TouchesNoires1">
+	</div>
+  </div>
+<div id="audioConteneur" >
+</div>
+<script>var Piano = 0;
+var container0 = document.getElementById('audioConteneur');
+for (var Piano = 0; Piano < 5; Piano++) {
+	container0.innerHTML += '<audio id="DO'+ Piano +'" src="audio/c'+ Piano +'.wav.mp3" ></audio>';
+	container0.innerHTML += '<audio id="RE'+ Piano +'" src="audio/d'+ Piano +'.wav.mp3" ></audio>';
+	container0.innerHTML += '<audio id="REX'+ Piano +'" src="audio/cs'+ Piano +'.wav.mp3" ></audio>';
+	container0.innerHTML += '<audio id="MI'+ Piano +'" src="audio/e'+ Piano +'.wav.mp3" ></audio>';
+	container0.innerHTML += '<audio id="MIX'+ Piano +'" src="audio/ds'+ Piano +'.wav.mp3" ></audio>';
+	container0.innerHTML += '<audio id="FA'+ Piano +'" src="audio/f'+ Piano +'.wav.mp3" ></audio>';
+	container0.innerHTML += '<audio id="SOL'+ Piano +'" src="audio/g'+ Piano +'.wav.mp3" ></audio>';
+	container0.innerHTML += '<audio id="SOLX'+ Piano +'" src="audio/fs'+ Piano +'.wav.mp3" ></audio>';
+	container0.innerHTML += '<audio id="LA'+ Piano +'" src="audio/a'+ Piano +'.wav.mp3" ></audio>';
+	container0.innerHTML += '<audio id="LAX'+ Piano +'" src="audio/gs'+ Piano +'.wav.mp3" ></audio>';
+	container0.innerHTML += '<audio id="SI'+ Piano +'" src="audio/b'+ Piano +'.wav.mp3" ></audio>';
+	container0.innerHTML += '<audio id="SIX'+ Piano +'" src="audio/as'+ Piano +'.wav.mp3" ></audio>';
+	pianoCreation();
+	}
+	var audio0 = document.getElementById("DO0");
+	var audio1 = document.getElementById("RE0");
+	var audio2 = document.getElementById("MI0");
+	var audio3 = document.getElementById("FA0");
+	var audio4 = document.getElementById("SOL0");
+	var audio5 = document.getElementById("LA0");
+	var audio6 = document.getElementById("SI0");
+	
+	var audio0x = document.getElementById("REX0");
+	var audio1x = document.getElementById("MIX0");
+	var audio2x = document.getElementById("SOLX0");
+	var audio3x = document.getElementById("LAX0");
+	var audio4x = document.getElementById("SIX0");
+	
+	var audio7 = document.getElementById("DO1");
+	var audio8 = document.getElementById("RE1");
+	var audio9 = document.getElementById("MI1");
+	var audio10 = document.getElementById("FA1");
+	var audio11 = document.getElementById("SOL1");
+	var audio12 = document.getElementById("LA1");
+	var audio13 = document.getElementById("SI1");
+		
+	var audio8x = document.getElementById("REX1");
+	var audio9x = document.getElementById("MIX1");
+	var audio10x = document.getElementById("SOLX1");
+	var audio11x = document.getElementById("LAX1");	
+	var audio12x = document.getElementById("SIX1");
+	
+function pianoCreation(){
+	var clavier = document.getElementById('TouchesConteneur');
+	var containerN0 = document.getElementById("TouchesNoires0");
+	var containerB0 = document.getElementById("TouchesBlanches0");	
+	var containerN1 = document.getElementById("TouchesNoires1");
+	var containerB1 = document.getElementById("TouchesBlanches1");
+	var container0Txt = 'zetyu';
+	var container0Txt = 'qsdfghj';
+	var container1Txt = 'zetyu';
+	var container1Txt = 'wxcvbnm';
+
+	if(Piano == 0){
+	var y = 0;
+	for (var i = 0; i < 5; i++) {
+		var res = container0Txt.charAt(y);
+		containerN0.innerHTML += "<a onclick='play"+ y +"x()' id='TouchesNoiresConteneur0"+ y +"' class='TouchesNoiresConteneur'><span style='color: white;'></span></a>";
+		 y = y + 1;
+	}
+	y=0; 
+	for (var i = 0; i < 7; i++) {
+		var res = container0Txt.charAt(y);
+		containerB0.innerHTML += "<a onclick='play"+ y +"()' id='TouchesBlanchesConteneur0"+ y +"' class='TouchesBlanchesConteneur'><span>"+ res +"</span></a>";
+		y = y + 1;
+	}
+	}
+	if(Piano == 1){
+	var y = 8;
+	for (var i = 0; i < 5; i++) {
+		var res = container1Txt.charAt(y);
+		containerN1.innerHTML += "<a onclick='play"+ y +"x()' id='TouchesNoiresConteneur1"+ y +"' class='TouchesNoiresConteneur'><span style='color: white;'></span></a>";
+		 y = y + 1;
+	}
+	y=7; 
+	for (var i = 0; i < 7; i++) {
+		var res = container1Txt.charAt(y);
+		containerB0.innerHTML += "<a onclick='play"+ y +"()' id='TouchesBlanchesConteneur1"+ y +"' class='TouchesBlanchesConteneur'><span>"+ res +"</span></a>";
+		y = y + 1;
+	}
+	}
+}
+</script>
   <div class="">
 
   </div>
@@ -55,104 +134,117 @@
 
 </footer>
 <script>
-var clavier = document.getElementById('TouchesConteneur');
-var container = document.getElementById("TouchesNoires");
-var container2 = document.getElementById("TouchesBlanches");
-var containerTxt = 'zetyu';
-var container2Txt = 'qsdfghj';
 
-var audio0 = document.getElementById("DO");
-var audio1 = document.getElementById("RE");
-var audio1x = document.getElementById("REX");
-var audio2 = document.getElementById("MI");
-var audio2x = document.getElementById("MIX");
-var audio3 = document.getElementById("FA");
-var audio4 = document.getElementById("SOL");
-var audio4x = document.getElementById("SOLX");
-var audio5 = document.getElementById("LA");
-var audio5x = document.getElementById("LAX");
-var audio6 = document.getElementById("SI");
-var audio6x = document.getElementById("SIX");
+var silverTouche0 = document.getElementById("TouchesBlanchesConteneur0");
+var silverTouche1 = document.getElementById("TouchesBlanchesConteneur1");
+var silverTouche2 = document.getElementById("TouchesBlanchesConteneur2");
+var silverTouche3 = document.getElementById("TouchesBlanchesConteneur3");
+var silverTouche4 = document.getElementById("TouchesBlanchesConteneur4");
+var silverTouche5 = document.getElementById("TouchesBlanchesConteneur5");
+var silverTouche6 = document.getElementById("TouchesBlanchesConteneur6");
 
-
-var y = 0;
-
-for (var i = 0; i < 5; i++) {
-	var res = containerTxt.charAt(y);
-container.innerHTML += "<a onclick='play"+ y +"x()' id='TouchesNoiresConteneur' class='TouchesNoiresConteneur'><span style='color: white;'>"+ res +"</span></a>";
-  y = y + 1;
-}
-y=0;
-for (var i = 0; i < 7; i++) {
-  var res = container2Txt.charAt(y);
-  container2.innerHTML += "<a onclick='play"+ y +"()' id='TouchesBlanchesConteneur' class='TouchesBlanchesConteneur'><span>"+ res +"</span></a>";
-  y = y + 1;
-}
 
 function play0(){
    if (audio0.paused) {audio0.play();}else{audio0.currentTime = 0;}
 }
+function play0x(){
+   if (audio0x.paused) {audio0x.play();}else{audio0x.currentTime = 0;}
+}
 function play1(){
    if (audio1.paused) {audio1.play();}else{audio1.currentTime = 0;}
 }
-function play0x(){
+function play1x(){
    if (audio1x.paused) {audio1x.play();}else{audio1x.currentTime = 0;}
 }
 function play2(){
    if (audio2.paused) {audio2.play();}else{audio2.currentTime = 0;}
 }
-function play1x(){
+function play2x(){
    if (audio2x.paused) {audio2x.play();}else{audio2x.currentTime = 0;}
 }
 function play3(){
    if (audio3.paused) {audio3.play();}else{audio3.currentTime = 0;}
 }
+function play3x(){
+   if (audio3x.paused) {audio3x.play();}else{audio3x.currentTime = 0;}
+}
 function play4(){
    if (audio4.paused) {audio4.play();}else{audio4.currentTime = 0;}
 }
-function play2x(){
+function play4x(){
    if (audio4x.paused) {audio4x.play();}else{audio4x.currentTime = 0;}
 }
 function play5(){
    if (audio5.paused) {audio5.play();}else{audio5.currentTime = 0;}
 }
-function play3x(){
-   if (audio5x.paused) {audio5x.play();}else{audio5x.currentTime = 0;}
-}
 function play6(){
    if (audio6.paused) {audio6.play();}else{audio6.currentTime = 0;}
 }
-function play4x(){
-   if (audio6x.paused) {audio6x.play();}else{audio6x.currentTime = 0;}
-}
 
+//--------------------------------------------
+function play7(){
+   if (audio7.paused) {audio7.play();}else{audio7.currentTime = 0;}
+}
+function play8(){
+   if (audio8.paused) {audio8.play();}else{audio8.currentTime = 0;}
+}
+function play8x(){
+   if (audio8x.paused) {audio8x.play();}else{audio8x.currentTime = 0;}
+}
+function play9(){
+   if (audio9.paused) {audio9.play();}else{audio9.currentTime = 0;}
+}
+function play9x(){
+   if (audio9x.paused) {audio9x.play();}else{audio9x.currentTime = 0;}
+}
+function play10(){
+   if (audio10.paused) {audio10.play();}else{audio10.currentTime = 0;}
+}
+function play10x(){
+   if (audio10x.paused) {audio10x.play();}else{audio10x.currentTime = 0;}
+}
+function play11(){
+   if (audio11.paused) {audio11.play();}else{audio11.currentTime = 0;}
+}
+function play11x(){
+   if (audio11x.paused) {audio11x.play();}else{audio11x.currentTime = 0;}
+}
+function play12(){
+   if (audio12.paused) {audio12.play();}else{audio12.currentTime = 0;}
+}function play12x(){
+   if (audio12x.paused) {audio12x.play();}else{audio12x.currentTime = 0;}
+}function play13(){
+   if (audio13.paused) {audio13.play();}else{audio13.currentTime = 0;}
+}function play13x(){
+   if (audio13x.paused) {audio13x.play();}else{audio13x.currentTime = 0;}
+}
   var down = {};
 
   $(document).keydown(function(event){
        var keycode = (event.keyCode ? event.keyCode : event.which);
        if(keycode == '90'){// z
             if (down['90'] == null) { // first press
-                play0x();down['90'] = true; // record that the key's down
+              //  play0x();down['90'] = true; // record that the key's down
             }
        }
        if(keycode == '69'){// e
             if (down['69'] == null) { // first press
-                play1x();down['69'] = true; // record that the key's down
+               // play1x();down['69'] = true; // record that the key's down
             }
        }
        if(keycode == '84'){// t
             if (down['84'] == null) { // first press
-                play2x();down['84'] = true; // record that the key's down
+              //  play2x();down['84'] = true; // record that the key's down
             }
        }
        if(keycode == '89'){// y
             if (down['89'] == null) { // first press
-                play3x();down['89'] = true; // record that the key's down
+              //  play3x();down['89'] = true; // record that the key's down
             }
        }
        if(keycode == '85'){// u
             if (down['85'] == null) { // first press
-                play4x();down['85'] = true; // record that the key's down
+               // play4x();down['85'] = true; // record that the key's down
             }
        }
 	          if(keycode == '81'){// q
@@ -172,12 +264,12 @@ function play4x(){
        }
        if(keycode == '70'){// f
             if (down['70'] == null) { // first press
-                play3();down['70'] = true; // record that the key's down
+                play3();down['70'] = true;// record that the key's down
             }
        }
        if(keycode == '71'){// g
             if (down['71'] == null) { // first press
-                play4();down['71'] = true; // record that the key's down
+                play4();down['71'] = true;// record that the key's down
             }
        }
        if(keycode == '72'){// h
