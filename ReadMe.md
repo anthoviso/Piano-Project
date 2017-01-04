@@ -1,6 +1,6 @@
 <snippet>
-  <content><![CDATA[
-# ${1:Music Experiments | Online Piano}
+  <content>
+# Music Experiments | Online Piano
 
 ## Anthony VISOCCHI
 ### v1.0.3 - 04/01/2017
@@ -17,9 +17,6 @@
 * html5
 * css3
 * javascript / jquery
-
-
-Anthony VISOCCHI: Write license
-]]></content>
+</content>
   <tabTrigger>readme</tabTrigger>
 </snippet>
